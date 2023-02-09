@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { SearchBar } from "./components/SearchBar";
 
-function Home() {
+export const Home = () => {
   return (
     <main className="max-w-screen-md mx-auto">
-      <SearchBar />
+      <SearchBar placeholder="Search for any word..." />
     </main>
   );
-}
-
-export default Home;
+};

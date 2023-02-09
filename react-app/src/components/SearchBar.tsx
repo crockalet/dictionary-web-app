@@ -23,7 +23,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     <input
       type="search"
       onChange={changeHandler}
-      className={`w-full text-xl py-5 px-6 rounded-2xl bg-gray-100 dark:bg-gray-600 ${className}`}
+      className={`w-full text-xl py-5 px-6 rounded-2xl bg-gray-100 dark:bg-gray-600 font-bold ${className}`}
       {...rest}
     />
   );
