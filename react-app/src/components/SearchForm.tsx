@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from "react";
-import debounce from "lodash/debounce";
 import classNames from "classnames";
+import React, { useState } from "react";
 
-export const SearchForm: React.FC<{}> = () => {
+export const SearchForm: React.FC<{
+  onSubmit?: (values: { query: string }) => void;
+}> = ({ onSubmit }) => {
   const [query, setQuery] = useState(
     new URLSearchParams(document.location.search).get("query") ?? undefined
   );
@@ -20,6 +21,7 @@ export const SearchForm: React.FC<{}> = () => {
       return;
     }
 
+    onSubmit?.({ query });
     history.pushState(null, "", new URLSearchParams({ query }).toString());
   };
 

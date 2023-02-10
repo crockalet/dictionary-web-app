@@ -1,13 +1,16 @@
-import React from "react";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "./components/Header";
-import { Home } from "./Home";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
+import { Home } from "./Home";
+import { queryClient } from "./modules/react-query/queryClient";
 
 export const App = () => {
   return (
-    <DarkModeProvider>
-      <Header />
-      <Home />
-    </DarkModeProvider>
+    <QueryClientProvider client={queryClient}>
+      <DarkModeProvider>
+        <Header />
+        <Home />
+      </DarkModeProvider>
+    </QueryClientProvider>
   );
 };
