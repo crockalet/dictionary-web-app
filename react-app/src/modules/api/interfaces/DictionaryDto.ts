@@ -4,7 +4,7 @@ import { Phonetic } from "./Phonetic";
 export interface DictionaryDto {
   word: string;
   phonetic: string;
-  phonetics: Phonetic[];
+  phonetics?: Phonetic[];
   origin: string;
   meanings: Meaning[];
 }

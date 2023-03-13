@@ -36,7 +36,7 @@ export const SearchForm: React.FC<{
             "w-full py-5 px-6 rounded-2xl \
           text-xl font-bold indent-2 \
           bg-gray-100 dark:bg-gray-600 \
-          placeholder:text-gray-500/25 \
+          placeholder:text-gray-500/25 dark:placeholder:text-white/25 \
           outline-primary caret-primary active:outline focus:outline"
           )}
           placeholder="Search for any word…"
