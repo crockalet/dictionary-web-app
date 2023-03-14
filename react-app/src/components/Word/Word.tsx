@@ -19,8 +19,10 @@ export const Word: React.FC<WordProps> = ({ word, ...rest }) => {
     <div {...rest}>
       <div className="flex justify-between">
         <div>
-          <h1 className="text-3xl md:text-6xl font-bold">{word.word}</h1>
-          <em>{phonetic?.text ?? word.phonetic}</em>
+          <h1 className="text-3xl md:text-heading-l font-bold">{word.word}</h1>
+          <em className="font-sans-serif text-primary not-italic text-body-m md:text-heading-m mt-2 block">
+            {word.phonetic ?? phonetic?.text}
+          </em>
         </div>
 
         {phonetic?.audio && <PlayButton audio={phonetic.audio} />}

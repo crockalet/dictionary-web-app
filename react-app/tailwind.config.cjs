@@ -3,6 +3,11 @@ module.exports = {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      "sans-serif": ["Inter", "Helvetica", "Tahoma", "sans-serif"],
+      serif: ["Lora", "Georgia", "serif"],
+      mono: ["Inconsolata", "mono"],
+    },
     colors: {
       gray: {
         100: "#F4F4F4",
@@ -17,7 +22,21 @@ module.exports = {
       primary: "#A445ED",
       danger: "#FF5252",
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        "body-s": ["0.875rem", "1.0625rem"],
+        "body-m": ["1.125rem", "1.5rem"],
+        "heading-s": ["1.25rem", "1.625rem"],
+        "heading-m": ["1.5rem", "1.8125rem"],
+        "heading-l": [
+          "4rem",
+          {
+            lineHeight: "4.8125rem",
+            fontWeight: "700",
+          },
+        ],
+      },
+    },
   },
   plugins: [],
 };
