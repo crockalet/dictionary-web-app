@@ -1,12 +1,15 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { SearchForm } from "./components/SearchForm";
 import { Word } from "./components/Word";
 import { useDictionaryWord } from "./modules/api/hooks/useDictionaryWord";
+import { useSearchQuery } from "./modules/search-query/useSearchQuery";
 
 export const Home = () => {
-  const [query, setQuery] = useState(
-    new URLSearchParams(document.location.search).get("query") ?? undefined
-  );
+  const { query, setQuery } = useSearchQuery();
+
+  const handleSearch = ({ query }: { query: string }) => {
+    setQuery(query);
+  };
 
   const { isLoading, isError, data } = useDictionaryWord(query!, {
     enabled: !!query,
@@ -16,9 +19,8 @@ export const Home = () => {
 
   return (
     <main className="max-w-screen-md mx-auto">
-      <SearchForm onSubmit={({ query }) => setQuery(query)} />
+      <SearchForm onSubmit={handleSearch} />
       {word && <Word word={word} className="mt-11" />}
-      {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
     </main>
   );
 };

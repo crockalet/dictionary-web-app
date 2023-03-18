@@ -6,6 +6,20 @@
   html {
     font-family: Inter, Tahoma, Helvetica, sans-serif;
   }
+
+  ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 1rem;
+  }
+
+  ul > li {
+    padding-left: 0.65rem;
+  }
+
+  ul > li::marker {
+    color: #8f19e8;
+  }
 }
 
 @supports not (font-variation-settings: normal) {

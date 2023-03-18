@@ -25,7 +25,7 @@ export const PlayButton: React.FC<PlayButtonProps> = ({ audio }) => {
         viewBox="0 0 75 75"
         className="text-primary group"
       >
-        <g fill="currentColor" fill-rule="evenodd">
+        <g fill="currentColor" fillRule="evenodd">
           <circle
             cx="37.5"
             cy="37.5"

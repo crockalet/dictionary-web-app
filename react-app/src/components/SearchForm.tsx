@@ -1,35 +1,42 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchQuery } from "../modules/search-query/useSearchQuery";
 
 export const SearchForm: React.FC<{
   onSubmit?: (values: { query: string }) => void;
 }> = ({ onSubmit }) => {
-  const [query, setQuery] = useState(
-    new URLSearchParams(document.location.search).get("query") ?? undefined
+  const { query } = useSearchQuery();
+
+  const [value, setValue] = useState(
+    new URLSearchParams(document.location.search).get("query") ?? ""
   );
+
   const [error, setError] = useState<string>();
 
+  useEffect(() => {
+    setValue(query ?? "");
+  }, [query]);
+
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setQuery(e.target.value);
+    setValue(e.target.value);
   };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    if (!query) {
+    if (!value) {
       setError("Whoops, can't be empty...");
       return;
     }
 
-    onSubmit?.({ query });
-    history.pushState(null, "", new URLSearchParams({ query }).toString());
+    onSubmit?.({ query: value });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="relative">
         <input
-          value={query}
+          value={value}
           onChange={handleChange}
           type="text"
           className={classNames(

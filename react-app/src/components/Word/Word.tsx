@@ -1,6 +1,7 @@
 import { find } from "lodash";
 import { useMemo } from "react";
 import { DictionaryDto } from "../../modules/api/interfaces";
+import { Meaning } from "./Meaning";
 import { PlayButton } from "./PlayButton";
 
 interface WordProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -27,6 +28,12 @@ export const Word: React.FC<WordProps> = ({ word, ...rest }) => {
 
         {phonetic?.audio && <PlayButton audio={phonetic.audio} />}
       </div>
+
+      {word.meanings.map((meaning, index) => (
+        <Meaning meaning={meaning} key={index} className="mt-8" />
+      ))}
+
+      <hr className="my-8 h-px color-gray-200 dark:color-gray-400" />
     </div>
   );
 };
