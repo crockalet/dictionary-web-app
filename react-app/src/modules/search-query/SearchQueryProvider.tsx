@@ -1,7 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { SearchQueryContext } from "./SearchQueryContext";
 
-// TODO: change query on history change
 // TODO: add preload function
 export const SearchQueryContextProvider: React.FC<{
   children?: React.ReactNode;
@@ -20,7 +19,27 @@ export const SearchQueryContextProvider: React.FC<{
   }, []);
 
   useEffect(() => {
+    const handlePopState = () => {
+      url.current = new URL(document.location.href);
+
+      setQuery(
+        new URLSearchParams(document.location.search).get("query") ?? undefined
+      );
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
     if (!isMounted) return;
+
+    if (
+      (!query && !url.current.searchParams.get("query")) ||
+      query === url.current.searchParams.get("query")
+    )
+      return;
 
     if (!query) {
       url.current.searchParams.delete("query");
@@ -29,7 +48,6 @@ export const SearchQueryContextProvider: React.FC<{
     }
 
     history.pushState(null, "", url.current);
-    console.log("effect", query);
   }, [query]);
 
   return (
