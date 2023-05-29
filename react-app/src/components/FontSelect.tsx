@@ -13,11 +13,15 @@ export const FontSelect = () => {
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(() => localStorage.getItem("font") ?? "sans-serif");
 
+  const ref = useOutsideClick<HTMLUListElement>(() => setShow(false));
+
   const selected = useMemo(() => fonts.find(font => font.id === active), [active]);
 
   const toggle = () => setShow(s => !s);
-
-  const ref = useOutsideClick<HTMLUListElement>(() => setShow(false));
+  const setActiveFont = (font: string) => () => {
+    setActive(font);
+    setShow(false);
+  }
 
   useEffect(() => {
     document.documentElement.classList.remove("font-sans-serif", "font-serif", "font-mono");
@@ -50,7 +54,7 @@ export const FontSelect = () => {
           <li key={font.id} className="p-0 group/font">
             <button
               aria-selected={font.id === active}
-              onClick={() => setActive(font.id)}
+              onClick={setActiveFont(font.id)}
               className={classNames(font.font, "w-full text-start font-bold text-body-m \
                 transition-colors duration-300 ease-out \
                 group-hover/font:text-primary")}
