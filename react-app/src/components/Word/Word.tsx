@@ -34,6 +34,8 @@ export const Word: React.FC<WordProps> = ({ word, ...rest }) => {
       ))}
 
       <hr className="my-8 h-px color-gray-200 dark:color-gray-400" />
+
+
     </div>
   );
 };

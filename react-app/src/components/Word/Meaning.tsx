@@ -42,7 +42,7 @@ export const Meaning: React.FC<MeaningProps> = ({
             Synonyms
             <span className="font-bold text-primary ml-5">
               {synonyms.map((synonym, index) => (
-                <a key={index} onClick={changeQuery(synonym)} className="mx-1">
+                <a key={index} onClick={changeQuery(synonym)} className="mx-1 cursor-pointer underline-offset-4 hover:underline">
                   {synonym}
                 </a>
               ))}

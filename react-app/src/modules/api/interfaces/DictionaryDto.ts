@@ -7,4 +7,5 @@ export interface DictionaryDto {
   phonetics?: Phonetic[];
   origin: string;
   meanings: Meaning[];
+  sourceUrls: string[];
 }
