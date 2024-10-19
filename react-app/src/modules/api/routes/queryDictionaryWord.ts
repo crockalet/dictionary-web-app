@@ -1,3 +1,4 @@
+import { DictionaryError } from "../exceptions/DictionaryError";
 import { DictionaryDto } from "../interfaces/DictionaryDto";
 
 export async function queryDictionaryWord(
@@ -8,5 +9,17 @@ export async function queryDictionaryWord(
     "https://api.dictionaryapi.dev/api/v2/entries/en/"
   ).toString();
 
-  return await (await fetch(url, { method: "GET" })).json();
+  const res = await fetch(url, { method: 'GET' });
+
+  if (!res.ok) {
+    const error = await res.json();
+    
+    throw new DictionaryError(
+      error.title,
+      error.message,
+      error.resolution
+    );
+  }
+
+  return await res.json();
 }

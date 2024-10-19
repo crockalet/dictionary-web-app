@@ -1,8 +1,9 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { DictionaryDto } from "../interfaces/DictionaryDto";
-import { DictionaryError } from "../interfaces/DictionaryError";
+// import { DictionaryError } from "../interfaces/DictionaryError";
 import { dictionaryWordKey } from "../keys/dictionaryWordKey";
 import { queryDictionaryWord } from "../routes/queryDictionaryWord";
+import { DictionaryError } from "../exceptions/DictionaryError";
 
 interface UseDictionaryWordOptions<TData>
   extends Omit<
