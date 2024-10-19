@@ -25,37 +25,37 @@
 @supports not (font-variation-settings: normal) {
   @font-face {
     font-family: Inter;
-    src: url("fonts/inter/static/Inter-Regular.ttf");
+    src: local('Inter-Regular.ttf') url("./assets/fonts/inter/static/Inter-Regular.ttf");
     font-weight: 500;
   }
 
   @font-face {
     font-family: Inter;
-    src: url("fonts/inter/static/Inter-Bold.ttf");
+    src:  url("./assets/fonts/inter/static/Inter-Bold.ttf");
     font-weight: bold;
   }
 
   @font-face {
     font-family: Inconsolata;
-    src: url("fonts/inconsolata/static/Inconsolata-Regular.ttf");
+    src: url("./assets/fonts/inconsolata/static/Inconsolata-Regular.ttf");
     font-weight: 500;
   }
 
   @font-face {
     font-family: Inconsolata;
-    src: url("fonts/inconsolata/static/Inconsolata-Bold.ttf");
+    src: url("./assets/fonts/inconsolata/static/Inconsolata-Bold.ttf");
     font-weight: bold;
   }
 
   @font-face {
     font-family: Lora;
-    src: url("fonts/lora/static/Lora-Regular.ttf");
+    src: url("./assets/fonts/lora/static/Lora-Regular.ttf");
     font-weight: 500;
   }
 
   @font-face {
     font-family: Lora;
-    src: url("fonts/lora/static/Lora-Bold.ttf");
+    src: url("./assets/fonts/lora/static/Lora-Bold.ttf");
     font-weight: bold;
   }
 }
@@ -63,27 +63,27 @@
 @supports (font-variation-settings: normal) {
   @font-face {
     font-family: "Inter";
-    src: url("fonts/inter/Inter-VariableFont_slnt,wght.ttf")
+    src: url("./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf")
         format("woff2 supports variations"),
-      url("fonts/inter/Inter-VariableFont_slnt,wght.ttf")
+      url("./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf")
         format("woff2-variations");
     font-weight: 400 700;
   }
 
   @font-face {
     font-family: "Inconsolata";
-    src: url("fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+    src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
         format("woff2 supports variations"),
-      url("fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+      url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
         format("woff2-variations");
     font-weight: 400 700;
   }
 
   @font-face {
     font-family: "Lora";
-    src: url("fonts/lora/Lora-VariableFont_wght.ttf")
+    src: url("./assets/fonts/lora/Lora-VariableFont_wght.ttf")
         format("woff2 supports variations"),
-      url("fonts/lora/Lora-VariableFont_wght.ttf") format("woff2-variations");
+      url("./assets/fonts/lora/Lora-VariableFont_wght.ttf") format("woff2-variations");
     font-weight: 400 700;
   }
 }
