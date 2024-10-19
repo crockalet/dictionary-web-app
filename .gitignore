@@ -18,3 +18,5 @@ figma***
 .prettierignore
 
 .vscode
+
+.env

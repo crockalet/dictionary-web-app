@@ -50,7 +50,7 @@ export const SearchForm: React.FC<{
           />
 
           <button type="submit" className="absolute right-0 inset-y-0 p-6">
-            <img alt="search" src="./images/icon-search.svg" />
+            <img alt="search" src={new URL("/images/icon-search.svg", import.meta.url).href} />
           </button>
         </div>
       </form>
