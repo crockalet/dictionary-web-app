@@ -43,7 +43,7 @@ export const SearchForm: React.FC<{
             bg-gray-100 dark:bg-gray-600 \
             placeholder:text-gray-500/25 dark:placeholder:text-white/25 \
             outline-primary caret-primary active:outline focus:outline", {
-              "outline-danger outline": error,
+              "outline-danger outline focus:outline-danger": error,
             }
             )}
             placeholder="Search for any word…"

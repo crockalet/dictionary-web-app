@@ -12,19 +12,19 @@ importers:
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
       '@tanstack/query-sync-storage-persister':
-        specifier: ^4.27.1
+        specifier: ^4.29.7
         version: 4.29.7
       '@tanstack/react-query':
-        specifier: ^4.24.4
+        specifier: ^4.29.7
         version: 4.29.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^4.27.0
+        specifier: ^4.29.7
         version: 4.29.7(@tanstack/react-query@4.29.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@tanstack/react-query-persist-client':
-        specifier: ^4.27.0
+        specifier: ^4.29.7
         version: 4.29.7(@tanstack/react-query@4.29.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       autoprefixer:
-        specifier: ^10.4.13
+        specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.23)
       classnames:
         specifier: ^2.3.2
@@ -33,7 +33,7 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       postcss:
-        specifier: ^8.4.21
+        specifier: ^8.4.23
         version: 8.4.23
       react:
         specifier: ^18.2.0
@@ -46,16 +46,16 @@ importers:
         version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@types/lodash':
-        specifier: ^4.14.191
+        specifier: ^4.14.195
         version: 4.14.195
       '@types/react':
-        specifier: ^18.0.27
+        specifier: ^18.2.7
         version: 18.2.7
       '@types/react-dom':
-        specifier: ^18.0.10
+        specifier: ^18.2.4
         version: 18.2.4
       '@vitejs/plugin-react-swc':
-        specifier: ^3.0.0
+        specifier: ^3.3.1
         version: 3.3.1(vite@4.3.9)
       prettier:
         specifier: ^3.3.3
@@ -67,13 +67,13 @@ importers:
         specifier: ^0.6.8
         version: 0.6.8(prettier-plugin-organize-imports@3.2.2(prettier@3.3.3)(typescript@4.9.5))(prettier@3.3.3)
       tailwindcss:
-        specifier: ^3.2.4
+        specifier: ^3.3.2
         version: 3.3.2
       typescript:
-        specifier: ^4.9.3
+        specifier: ^4.9.5
         version: 4.9.5
       vite:
-        specifier: ^4.1.0
+        specifier: ^4.3.9
         version: 4.3.9
       vite-plugin-svgr:
         specifier: ^2.4.0
@@ -611,8 +611,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  caniuse-lite@1.0.30001489:
-    resolution: {integrity: sha512-x1mgZEXK8jHIfAxm+xgdpHpk50IN3z3q3zP261/WS+uvePxW8izXuCu6AHz0lkuYTlATDehiZ/tNyYBdSQsOUQ==}
+  caniuse-lite@1.0.30001669:
+    resolution: {integrity: sha512-DlWzFDJqstqtIVx1zeSpIMLjunf5SmwOw0N2Ck/QSQdS8PLS4+9HrLaYei4w8BIAL7IB/UEDu889d8vhCTPA0w==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -1634,7 +1634,7 @@ snapshots:
   autoprefixer@10.4.14(postcss@8.4.23):
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001489
+      caniuse-lite: 1.0.30001669
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1656,7 +1656,7 @@ snapshots:
 
   browserslist@4.21.5:
     dependencies:
-      caniuse-lite: 1.0.30001489
+      caniuse-lite: 1.0.30001669
       electron-to-chromium: 1.4.408
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
@@ -1667,7 +1667,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  caniuse-lite@1.0.30001489: {}
+  caniuse-lite@1.0.30001669: {}
 
   chalk@2.4.2:
     dependencies:
